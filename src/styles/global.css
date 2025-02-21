@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('../../node_modules/@picocss/pico/css/pico.sand.min.css');
+
+:root {
+  --pico-font-family: "Montserrat";
+  --pico-font-weight: 400;
+  --pico-font-size: 110%;
+}
+h1 {
+  /* --pico-font-family: "Sixtyfour"; */
+  /* --pico-font-family: "Jersey 10"; */
+  /* --pico-font-family: "Tiny5"; */
+  --pico-font-family: "Doto";
+  /* --pico-font-family: monospace; */
+  --pico-font-weight: normal;
+  margin-block-start: .5em;
+  margin-block-end: 1em;
+  font-size: 3rem;
+  --pico-color:#fff;
+  /* --pico-font-weight: 400; */
+  /* --pico-typography-spacing-vertical: 0.5rem; */
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.75em;
+  }
+}
+section {
+  /* position: relative; */
+}
+.sm-heading-icon {
+  position:absolute;
+  left: -1.5em;
+  font-size: 1em;
+}
+
+ul.sm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  padding: 0;
+  max-width: 40em;
+
+  li {
+    font-size: 70%;
+    line-height: 1.5rem;
+    list-style-type: none;
+    background: var(--pico-form-element-background-color);
+    border: 1px solid;
+    border-color:var(--pico-form-element-border-color);
+    padding: 0em .75em;
+    border-radius: .25em;
+  }
+}
+/* body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5; */
+/* } */
+
+* {
+  box-sizing: border-box;
+}
