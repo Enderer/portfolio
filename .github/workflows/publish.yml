@@ -10,6 +10,10 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      AWS_ROLE: ${{ vars.AWS_ROLE }}
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      AWS_BUCKET: ${{ vars.AWS_BUCKET }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,8 +25,10 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_ROLE }}
+          role-to-assume: ${{ env.AWS_ROLE }}
           role-session-name: session-deploy-portfolio
-          aws-region: ${{ vars.AWS_REGION }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Sts GetCallerIdentity
+        run: aws sts get-caller-identity
       - name: Deploy static site to S3 bucket
-        run: aws s3 cp ./dist/ s3://${{vars.BUCKET_NAME}}/
+        run: aws s3 cp ./dist/ s3://${{env.AWS_BUCKET}}/ --recursive
