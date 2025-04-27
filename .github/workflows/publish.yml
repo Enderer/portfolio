@@ -2,18 +2,9 @@ name: Publish
 on:
   release:
     types: [published]
-
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   publish:
     runs-on: ubuntu-latest
-    env:
-      AWS_ROLE: ${{ vars.AWS_ROLE }}
-      AWS_REGION: ${{ vars.AWS_REGION }}
-      AWS_BUCKET: ${{ vars.AWS_BUCKET }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,10 +16,10 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ env.AWS_ROLE }}
-          role-session-name: session-deploy-portfolio
-          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          role-session-name: session-deploy-segment
+          aws-region: ${{ secrets.AWS_REGION }}
       - name: Sts GetCallerIdentity
         run: aws sts get-caller-identity
       - name: Deploy static site to S3 bucket
-        run: aws s3 cp ./dist/ s3://${{env.AWS_BUCKET}}/ --recursive
+        run: aws s3 sync ./storybook-static/ s3://${{ secrets.AWS_BUCKET }} --recursive

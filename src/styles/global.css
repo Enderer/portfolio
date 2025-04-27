@@ -64,3 +64,21 @@ ul.sm-tags {
 * {
   box-sizing: border-box;
 }
+
+.wc-header {
+  margin-bottom: .5em;
+  text-align: center;
+}
+
+.wc-item {
+  flex-direction: column;
+  gap: 1em;
+
+  img {
+    border: 1px solid #000;
+  }
+}
+
+.sm-heading-section {
+  --pico-color: #fff;
+}
