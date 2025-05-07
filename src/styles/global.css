@@ -107,3 +107,7 @@ ul.sm-tags {
 details summary {
   transition-property: margin-bottom, color !important;
 }
+
+section {
+  margin-bottom: 3em;
+}

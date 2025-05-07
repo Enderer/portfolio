@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { YouTube } from 'astro-embed';
 import IconLinkedIn from '../components/find-icons.astro';
+import SectionApps from '../components/section-apps.astro';
 const pageTitle = "StephenMarsh.com";
 ---
 <html lang="en">
@@ -13,19 +14,6 @@ const pageTitle = "StephenMarsh.com";
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
     <style>
-      section {
-        margin-bottom: 3em;
-      }
-      div.repo-card {
-        max-width: 20em;
-        min-width: 15em;
-      }
-      div.sm-repos {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: .5em;
-      }
       footer {
         font-size: .6em;
       }
@@ -43,58 +31,12 @@ const pageTitle = "StephenMarsh.com";
           </p>
         </section>
 
-        <section>
-          <p class="sm-heading-section">
-            <span class="sm-heading-icon">👨‍💻</span>
-            <span>Some Apps I've Built</span>
-          </p>
 
-          <div class="app-gallery">
-            <details name="book-of-love">
-              <summary>Dartbot</summary>
-              <p class="outer">
-                <div class="inner">
-                  <a target="_blank" href="https://www.dartbot.com">
-                    <img src="cricket.png" alt="Dartbot" width="125">
-                  </a>
-                </div>
-              </p>
-            </details>
-          </div>
 
-          <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 5em;">
-            <div class="wc-item">
-              <div class="wc-header">
-                Dartbot
-              </div>
-              <div>
-                <a target="_blank" href="https://www.dartbot.com">
-                  <img src="cricket.png" alt="Dartbot" width="125">
-                </a>
-              </div>
-            </div>
-            <div class="wc-item">
-              <div class="wc-header">
-                Dartbot V2
-              </div>
-              <div>
-                <a target="_blank" href="https://test.dartbot.com">
-                  <img src="x01.png" alt="Dartbot" width="125">
-                </a>
-              </div>
-            </div>
-            <div class="wc-item">
-              <div class="wc-header">
-                Flight School
-              </div>
-              <div>
-                <a target="_blank" href="https://flightschool.dartbot.com">
-                  <img src="flightschool.png" alt="Dartbot" width="125">
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SectionApps />
+
+
+
 
         <section>
           <p class="sm-heading-section">

@@ -1,0 +1,65 @@
+---
+---
+
+<style>
+  .app-thumb {
+    width: 20rem;
+    aspect-ratio: 4 / 3;
+    border: .2rem solid #000;;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .inner {
+    margin-bottom: 2rem;
+  }
+
+  summary > span:first-child {
+    width: 10em;
+    display: inline-block;
+  }
+  summary > span.tagline {
+    display: inline-block;
+    color: var(--pico-code-color);
+  }
+</style>
+
+<section>
+  <p class="sm-heading-section">
+    <span class="sm-heading-icon">👨‍💻</span>
+    <span>Some Apps I've Built</span>
+  </p>
+
+  <details name="app-dartbot-v1">
+    <summary><span>Dartbot</span> <span class="tagline">A dart scoring robot</span></summary>
+    <p class="outer">
+      <div class="inner">
+        <a target="_blank" href="https://www.dartbot.com">
+          <img class="app-thumb" src="cricket.png" alt="Dartbot">
+        </a>
+      </div>
+    </p>
+  </details>
+
+  <details name="app-dartbot-v2">
+    <summary><span>Dartbot V2</span> <span class="tagline">Updated version</span></summary>
+    <p class="outer">
+      <div class="inner">
+        <a target="_blank" href="https://test.dartbot.com">
+          <img class="app-thumb" src="x01.png" alt="Dartbot">
+        </a>
+      </div>
+    </p>
+  </details>
+
+  <details name="app-flighschool">
+    <summary><span>FlightSchool</span> <span class="tagline">An organized way to improve how well you play</span></summary>
+    <p class="outer">
+      <div class="inner">
+        <a target="_blank" href="https://flightschool.dartbot.com">
+          <img class="app-thumb" src="flightschool.png" alt="Flight School">
+        </a>
+      </div>
+    </p>
+  </details>
+</section>
