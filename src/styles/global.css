@@ -82,3 +82,28 @@ ul.sm-tags {
 .sm-heading-section {
   --pico-color: #fff;
 }
+
+
+.outer {
+  display: grid;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+[open] .outer {
+  animation: show var(--transition);
+}
+
+@keyframes show {
+  from {
+    grid-template-rows: 0fr;
+  }
+}
+
+.inner {
+  min-height: 0;
+}
+
+details summary {
+  transition-property: margin-bottom, color !important;
+}

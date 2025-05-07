@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { YouTube } from 'astro-embed';
+import IconLinkedIn from '../components/find-icons.astro';
 const pageTitle = "StephenMarsh.com";
 ---
 <html lang="en">
@@ -37,16 +39,8 @@ const pageTitle = "StephenMarsh.com";
           <p class="sm-heading-section">
             <span class="sm-heading-icon">🕵️</span>
             <span>Some Places to Find Me</span>
+            <div><IconLinkedIn /></div>
           </p>
-          <ul>
-            <li><a target="_blank" href="https://github.com/dartbotapp">Github - dartbot</a></li>
-            <li><a target="_blank" href="https://github.com/Enderer">Github - enderer</a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/in/marshs">LinkedIn</a></li>
-            <li><a target="_blank" href="https://www.npmjs.com/~enderer">NPM</a></li>
-            <li><a target="_blank" href="https://medium.com/@dartbot">Medium</a></li>
-            <li><a target="_blank" href="https://dev.to/dartbot">Dev.to</a></li>
-            <li><a target="_blank" href="https://www.speedrun.com/users/enderer">SpeedRun</a> 🏃</li>
-          </ul>
         </section>
 
         <section>
@@ -54,6 +48,20 @@ const pageTitle = "StephenMarsh.com";
             <span class="sm-heading-icon">👨‍💻</span>
             <span>Some Apps I've Built</span>
           </p>
+
+          <div class="app-gallery">
+            <details name="book-of-love">
+              <summary>Dartbot</summary>
+              <p class="outer">
+                <div class="inner">
+                  <a target="_blank" href="https://www.dartbot.com">
+                    <img src="cricket.png" alt="Dartbot" width="125">
+                  </a>
+                </div>
+              </p>
+            </details>
+          </div>
+
           <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 5em;">
             <div class="wc-item">
               <div class="wc-header">
@@ -193,6 +201,18 @@ const pageTitle = "StephenMarsh.com";
             <li>Automerge</li>
           </ul>
         </section>
+
+        <section>
+          <p class="sm-heading-section">
+            <span>Some Songs I've Played 🎸</span>
+          </p>
+
+          <details name="book-of-love">
+            <summary>The Book Of Love (The Magnetic Fields) - Ukulele</summary>
+            <p class="outer"><div class="inner" ><YouTube id="lOpFKk1ZdIc"  /></div></p>
+          </details>
+        </section>
+
       </main>
       <hr>
       <footer>Made with ❤️ by Stephen Marsh</footer>
