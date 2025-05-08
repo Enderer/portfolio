@@ -1,8 +1,9 @@
 ---
 import '../styles/global.css';
-import { YouTube } from 'astro-embed';
-import IconLinkedIn from '../components/find-icons.astro';
+import SectionFind from '../components/section-find.astro';
 import SectionApps from '../components/section-apps.astro';
+import SectionWebComponents from '../components/section-wc.astro';
+import SectionSongs from '../components/section-songs.astro';
 const pageTitle = "StephenMarsh.com";
 ---
 <html lang="en">
@@ -17,58 +18,29 @@ const pageTitle = "StephenMarsh.com";
       footer {
         font-size: .6em;
       }
+      .sm-code-list {
+        padding-inline-start: 0;
+
+        > li {
+          list-style: none;
+        }
+      }
     </style>
   </head>
 		<body class="container">
       <main>
         <h1>{pageTitle}</h1>
 
-        <section>
-          <p class="sm-heading-section">
-            <span class="sm-heading-icon">🕵️</span>
-            <span>Some Places to Find Me</span>
-            <div><IconLinkedIn /></div>
-          </p>
-        </section>
-
-
-
+        <SectionFind />
         <SectionApps />
-
-
-
-
-        <section>
-          <p class="sm-heading-section">
-            <span class="sm-heading-icon">👨‍💻</span>
-            <span>Web Components</span>
-          </p>
-          <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 5em;">
-            <div class="wc-item">
-              <div class="wc-header">Segmented Display</div>
-              <div>
-                <a target="_blank" href="https://docs.dartbot.com/segment">
-                  <img src="segment.png" alt="Segmented Display" width="160">
-                </a>
-              </div>
-            </div>
-            <div class="wc-item">
-              <div class="wc-header">Dartboard</div>
-              <div>
-                <a target="_blank" href="https://docs.dartbot.com/dartboard">
-                  <img src="dartboard.png" alt="Dartboard web component" width="160">
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SectionWebComponents />
 
         <section>
           <p class="sm-heading-section">
             <span class="sm-heading-icon">👨‍💻</span>
             <span>Some Code I've Written</span>
           </p>
-          <ul>
+          <ul class="sm-code-list">
             <li>
               <a target="_blank" href="https://github.com/dartbotapp/dartboard">dartboard</a> -
               <span>Web component for displaying a dartboard</span>
@@ -144,16 +116,7 @@ const pageTitle = "StephenMarsh.com";
           </ul>
         </section>
 
-        <section>
-          <p class="sm-heading-section">
-            <span>Some Songs I've Played 🎸</span>
-          </p>
-
-          <details name="book-of-love">
-            <summary>The Book Of Love (The Magnetic Fields) - Ukulele</summary>
-            <p class="outer"><div class="inner" ><YouTube id="lOpFKk1ZdIc"  /></div></p>
-          </details>
-        </section>
+        <SectionSongs />
 
       </main>
       <hr>

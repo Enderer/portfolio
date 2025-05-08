@@ -5,6 +5,7 @@
   --pico-font-family: "Montserrat";
   --pico-font-weight: 400;
   --pico-font-size: 110%;
+  --pico-spacing: .65rem;
 }
 h1 {
   /* --pico-font-family: "Sixtyfour"; */
